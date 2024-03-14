@@ -39,4 +39,6 @@ export default (app: Application) => {
         publicAccessMdlw.ensurePublicAccess,
         designVersionCtrl.publicSetVersionActive
     )
+    app.route(`${utils.getServerPath()}/microservice/designs/:designId/domain`)
+        .post(publicAccessMdlw.ensurePublicAccess, designVersionCtrl.updateDomain)
 }
